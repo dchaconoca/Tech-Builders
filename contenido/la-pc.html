@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo Esencial Sobre Computadoras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    
+    <style>
+        :root {
+            --color-title: #990099;
+            --color-subtitle: #3c1e99;
+            --color-text: #353535;
+            --color-icon: #000000;
+            --color-background: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-background);
+            background-image: linear-gradient(to right, rgba(240, 240, 240, 0.7), rgba(255, 255, 255, 0.8));
+        }
+
+        .text-title { color: var(--color-title); }
+        .text-subtitle { color: var(--color-subtitle); }
+        .text-body { color: var(--color-text); }
+        .icon-color { color: var(--color-icon); }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: 90%;
+            max-height: 400px;
+            margin: auto;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(200, 200, 200, 0.5);
+        }
+    </style>
+</head>
+<body class="text-body">
+
+    <div class="container mx-auto p-4 sm:p-8">
+
+        <header class="text-center mb-12">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo Placeholder -->
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="Diana Emprende" class="h-20 w-auto md:h-22">
+                </a>
+                <div class="container mx-auto px-6 py-4 items-center">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-title drop-shadow-sm">🖥️ ¡Tu PC al Descubierto!</h1>
+                    <p class="text-lg md:text-xl text-body mt-4 max-w-3xl mx-auto">Si ya dominas tu celular, estás a un paso de ser un experto en computadoras. ¡Descubre cómo funcionan!</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="como-funciona">
+                <h2 class="text-3xl font-bold text-center mb-8 text-subtitle">¿Cómo funciona? Piensa en tu Celular</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <div class="card rounded-xl shadow-lg p-6 text-center">
+                        <h3 class="text-5xl mb-3 icon-color">🧠</h3>
+                        <h4 class="text-xl font-bold text-subtitle">CPU (El Cerebro)</h4>
+                        <p class="mt-2 text-body">Es el procesador que piensa y ejecuta todas las órdenes, igual que el chip de tu teléfono.</p>
+                    </div>
+
+                    <div class="card rounded-xl shadow-lg p-6 text-center">
+                        <h3 class="text-5xl mb-3 icon-color">⚡</h3>
+                        <h4 class="text-xl font-bold text-subtitle">RAM (Memoria Rápida)</h4>
+                        <p class="mt-2 text-body">Guarda lo que usas en el momento. Más RAM = más apps abiertas sin que se ponga lento.</p>
+                    </div>
+                    
+                    <div class="card rounded-xl shadow-lg p-6 text-center">
+                        <h3 class="text-5xl mb-3 icon-color">🗄️</h3>
+                        <h4 class="text-xl font-bold text-subtitle">Disco Duro (El Armario)</h4>
+                        <p class="mt-2 text-body">Aquí se guarda todo a largo plazo: tus juegos, fotos y tareas, como en la memoria de tu celular.</p>
+                    </div>
+
+                    <div class="card rounded-xl shadow-lg p-6 text-center">
+                        <h3 class="text-5xl mb-3 icon-color">⌨️</h3>
+                        <h4 class="text-xl font-bold text-subtitle">Periféricos (Tus Sentidos)</h4>
+                        <p class="mt-2 text-body">El teclado, ratón y monitor son como la pantalla táctil de tu móvil. ¡Son para que se entiendan!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hardware-software">
+                <h2 class="text-3xl font-bold text-center mb-8 text-subtitle">Hardware vs. Software: El Cuerpo y el Alma</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="card rounded-xl shadow-lg p-6">
+                        <div class="chart-container">
+                            <canvas id="hardwareSoftwareChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card rounded-xl shadow-lg p-6 space-y-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-subtitle">🔩 Hardware: El Cuerpo</h3>
+                            <p class="text-body">Es todo lo que puedes TOCAR: la pantalla, el teclado, los cables. Es la parte física.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-subtitle">💻 Software: El Alma</h3>
+                            <p class="text-body">Son los programas y apps. Es el sistema operativo (Windows, macOS) y los juegos. Le da vida al hardware.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-subtitle">🤝 El Dúo Dinámico</h3>
+                            <p class="text-body">¡Necesitas ambos! Son inseparables. El hardware sin software es un pisapapeles caro, y viceversa.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="seguridad">
+                <h2 class="text-3xl font-bold text-center mb-8 text-subtitle">¡Navega Seguro como un Pro!</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="card rounded-xl shadow-lg p-8 text-center hover:transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-7xl mb-4 icon-color">🔐</div>
+                        <h3 class="text-2xl font-bold text-title">Contraseñas de Acero</h3>
+                        <p class="mt-2 text-body">¡Olvídate de "123456"! Mezcla mayúsculas, minúsculas, números y símbolos. ¡Hazla impredecible!</p>
+                    </div>
+
+                    <div class="card rounded-xl shadow-lg p-8 text-center hover:transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-7xl mb-4 icon-color">🎣</div>
+                        <h3 class="text-2xl font-bold text-title">No Muerdas el Anzuelo</h3>
+                        <p class="mt-2 text-body">¿Un correo sospechoso que te regala algo? ¡No hagas clic! Es 'phishing', una trampa para robar tus datos.</p>
+                    </div>
+
+                    <div class="card rounded-xl shadow-lg p-8 text-center hover:transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-7xl mb-4 icon-color">👤</div>
+                        <h3 class="text-2xl font-bold text-title">Tu Info es un Tesoro</h3>
+                        <p class="mt-2 text-body">No compartas datos personales en sitios públicos. ¡Cuida tu privacidad como cuidas tu mayor tesoro!</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 py-8 border-t border-gray-300">
+            <p class="text-title font-bold">Ahora ya sabes lo básico. ¡El mundo de las computadoras es enorme y está listo para que lo explores!</p>
+            <div class="border-t mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Diana Chacón Ocariz.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        const ctx = document.getElementById('hardwareSoftwareChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Hardware (El Cuerpo)', 'Software (El Alma)'],
+                datasets: [{
+                    label: 'Componentes de una PC',
+                    data: [50, 50],
+                    backgroundColor: [
+                        '#3c1e99', // --color-subtitle
+                        '#990099'  // --color-title
+                    ],
+                    borderColor: getComputedStyle(document.documentElement).getPropertyValue('--color-background').trim(),
+                    borderWidth: 5,
+                    hoverOffset: 15
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim(),
+                            font: {
+                                size: 14,
+                                family: "'Plus Jakarta Sans', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

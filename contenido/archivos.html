@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Mundo de los Archivos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <style>
+        :root {
+            --color-title: #990099;
+            --color-subtitle: #3c1e99;
+            --color-text: #353535;
+            --color-icon: #000000;
+            --color-background: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-background);
+            background-image: linear-gradient(to right, rgba(240, 240, 240, 0.9), rgba(255, 255, 255, 0.9));
+        }
+
+        .text-title { color: var(--color-title); }
+        .text-subtitle { color: var(--color-subtitle); }
+        .text-body { color: var(--color-text); }
+        .icon-color { color: var(--color-icon); }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-6 md:p-10 max-w-5xl">
+        <header class="text-center mb-12 md:mb-20">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo Placeholder -->
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="Diana Emprende" class="h-20 w-auto md:h-22">
+                </a>
+                <div class="container mx-auto px-6 py-4 items-center">
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-title tracking-tight">El Mundo de los Archivos</h1>
+                    <p class="text-lg md:text-xl text-body mt-4 max-w-3xl mx-auto">Un archivo 📁 es un conjunto de datos (como texto, imágenes o música) que está guardado en tu computadora (o tu teléfono).</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="space-y-12">
+            
+            <section class="card text-center">
+                <h2 class="text-3xl font-bold text-subtitle mb-4">Anatomía de un Archivo 🧩</h2>
+                <p class="text-body max-w-2xl mx-auto mb-6">Cada archivo tiene dos partes clave: un <span class="font-bold">nombre</span> para que lo identifiques y una <span class="font-bold">extensión</span> que le dice a la computadora qué tipo de archivo es. ¡Como un nombre y un apellido!</p>
+                <div class="bg-gray-100 p-4 rounded-xl flex flex-col items-center justify-center w-full max-w-md mx-auto">
+                    <div class="w-full bg-white text-gray-800 rounded-lg p-4 shadow-inner text-center">
+                        <span class="font-mono bg-gray-200 text-xl md:text-2xl p-2 rounded">
+                            <span class="font-bold" style="color: #3c1e99;">MiTareaDeHistoria</span><span style="color: #990099;">.docx</span>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-bold text-subtitle text-center mb-8">Tipos de Archivos Más Comunes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white/80 p-6 rounded-2xl shadow-lg flex items-center space-x-6">
+                        <div class="text-5xl icon-color">🖼️</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-subtitle">Imágenes</h3>
+                            <p class="text-body mt-1">Para tus fotos y diseños.</p>
+                            <div class="mt-2 flex space-x-2">
+                                <span class="bg-gray-200 text-body text-sm font-semibold px-3 py-1 rounded-full">.jpg</span>
+                                <span class="bg-gray-200 text-body text-sm font-semibold px-3 py-1 rounded-full">.png</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/80 p-6 rounded-2xl shadow-lg flex items-center space-x-6">
+                        <div class="text-5xl icon-color">📄</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-subtitle">Documentos</h3>
+                            <p class="text-body mt-1">Para trabajos y textos.</p>
+                            <div class="mt-2 flex space-x-2">
+                                <span class="bg-gray-200 text-body text-sm font-semibold px-3 py-1 rounded-full">.docx</span>
+                                <span class="bg-gray-200 text-body text-sm font-semibold px-3 py-1 rounded-full">.pdf</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/80 p-6 rounded-2xl shadow-lg flex items-center space-x-6">
+                        <div class="text-5xl icon-color">🎵</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-subtitle">Audio</h3>
+                            <p class="text-body mt-1">Tus canciones y podcasts.</p>
+                            <div class="mt-2 flex space-x-2">
+                                <span class="bg-gray-200 text-body text-sm font-semibold px-3 py-1 rounded-full">.mp3</span>
+                                <span class="bg-gray-200 text-body text-sm font-semibold px-3 py-1 rounded-full">.wav</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/80 p-6 rounded-2xl shadow-lg flex items-center space-x-6">
+                        <div class="text-5xl icon-color">🎬</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-subtitle">Video</h3>
+                            <p class="text-body mt-1">Tus clips y películas.</p>
+                            <div class="mt-2 flex space-x-2">
+                                <span class="bg-gray-200 text-body text-sm font-semibold px-3 py-1 rounded-full">.mp4</span>
+                                <span class="bg-gray-200 text-body text-sm font-semibold px-3 py-1 rounded-full">.mov</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="card">
+                 <h2 class="text-3xl font-bold text-subtitle text-center mb-6">¿Qué Puedes Hacer con Ellos? ✨</h2>
+                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+                    <div class="bg-gray-100 p-4 rounded-lg"><p class="font-bold text-body">Crear</p></div>
+                    <div class="bg-gray-100 p-4 rounded-lg"><p class="font-bold text-body">Modificar</p></div>
+                    <div class="bg-gray-100 p-4 rounded-lg"><p class="font-bold text-body">Renombrar</p></div>
+                    <div class="bg-gray-100 p-4 rounded-lg"><p class="font-bold text-body">Copiar</p></div>
+                    <div class="bg-gray-100 p-4 rounded-lg"><p class="font-bold text-body">Mover</p></div>
+                    <div class="bg-red-100 p-4 rounded-lg"><p class="font-bold text-red-700">Borrar</p></div>
+                 </div>
+            </section>
+
+            <section class="card text-center">
+                <h2 class="text-3xl font-bold text-subtitle mb-4">¡A Organizar se ha Dicho! 🗂️</h2>
+                <p class="text-body max-w-2xl mx-auto">No guardes todo en el escritorio. Usa <span class="font-bold">carpetas</span> para clasificar tu información. Es como tener gavetas para tus cosas: una para medias, otra para camisetas. ¡Así encuentras todo más fácil y mantienes el orden!</p>
+            </section>
+
+        </div>
+
+        <footer class="text-center py-12 mt-8">
+            <p class="text-title font-bold">¡Ahora eres un experto en archivos!</p>
+            <div class="border-t mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Diana Chacón Ocariz.</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

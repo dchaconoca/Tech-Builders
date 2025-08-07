@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Builders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Usando Plus Jakarta Sans (recomendada como alternativa) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="./images/logo.png">
+
+    <style>
+        :root {
+            --color-title: #990099;
+            --color-subtitle: #3c1e99;
+            --color-text: #353535;
+            --color-icon: #000000;
+            --color-background: #ffffff;
+        }
+
+        /* Apply the primary font to the body */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-background);
+            background-image: linear-gradient(to right,rgba(240, 240, 240, 0.7), rgba(255, 255, 255, 0.8));
+        }
+        /* Custom styles for colors */
+        .text-title { color: var(--color-title); }
+        .text-subtitle { color: var(--color-subtitle); }
+        .text-body { color: var(--color-text); }
+        .icon-color { color: var(--color-icon); }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            color: #118AB2;
+            font-size: 2.5rem;
+            line-height: 1;
+            text-align: center;
+            transform: rotate(90deg);
+        }
+        @media (min-width: 1024px) {
+            .flow-arrow {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body class="text-body">
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12 md:mb-20">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo Placeholder -->
+                <a href="#inicio">
+                    <img src="./images/logo.png" alt="Diana Emprende" class="h-20 w-auto md:h-22">
+                </a>
+                <div class="container mx-auto px-6 py-4 items-center">
+                    <h1 class="text-4xl md:text-6xl font-black text-title mb-4">Tech Builders</h1>
+                    <p class="text-2xl md:text-4xl font-bold text-subtitle">Tu Laboratorio de Innovación</p>
+                </div>
+            </div>
+        </header>
+
+        <main id="inicio">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-title text-center">Material de Apoyo del Curso</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Artículo 1 -->
+                <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow flex flex-col">
+                    <a href="./contenido/proyecto.html" class="block mb-4" target="_blank">
+                        <img src="./images/proyectos.jpeg" alt="¿Qué es un Proyecto?" class="rounded-lg w-full h-40 object-cover mb-4">
+                        <h3 class="text-xl font-bold text-title mb-2">¿Qué es un Proyecto?</h3>
+                        <p class="text-body mb-2">Descubre las etapas clave de un proyecto y los roles principales que intervienen en su éxito.</p>
+                        <span class="text-sm text-subtitle font-semibold">Leer más →</span>
+                    </a>
+                </article>
+                <!-- Artículo 2 -->
+                <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow flex flex-col">
+                    <a href="./contenido/la-pc.html" class="block mb-4" target="_blank">
+                        <img src="./images/tu-pc.jpeg" alt="¡Tu PC al Descubierto!" class="rounded-lg w-full h-40 object-cover mb-4">
+                        <h3 class="text-xl font-bold text-title mb-2">¡Tu PC al Descubierto!</h3>
+                        <p class="text-body mb-2">Descubre cómo funciona tu computadora y sus componentes esenciales.</p>
+                        <span class="text-sm text-subtitle font-semibold">Leer más →</span>
+                    </a>
+                </article>
+                <!-- Artículo 3 -->
+                <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow flex flex-col">
+                    <a href="./contenido/archivos.html" class="block mb-4" target="_blank">
+                        <img src="./images/archivos.jpeg" alt="Equipos Efectivos" class="rounded-lg w-full h-40 object-cover mb-4">
+                        <h3 class="text-xl font-bold text-title mb-2">El Mundo de los Archivos</h3>
+                        <p class="text-body mb-2">Aprende qué son los archivos y cómo gestionarlos de manera efectiva.</p>
+                        <span class="text-sm text-subtitle font-semibold">Leer más →</span>
+                    </a>
+                </article>
+                <!-- Puedes agregar más artículos siguiendo el mismo formato -->
+            </div>
+        </main>
+
+
+
+        <footer class="text-center border-t pt-8 mt-12">
+            <div class="border-t mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Diana Chacón Ocariz.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const commonChartOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            size: 14,
+                            family: 'Inter'
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#073B4C',
+                    titleFont: {
+                        size: 16,
+                        weight: 'bold'
+                    },
+                    bodyFont: {
+                        size: 14
+                    },
+                    padding: 12,
+                    cornerRadius: 8
+                }
+            }
+        };
+
+        const effortCtx = document.getElementById('effortChart').getContext('2d');
+        new Chart(effortCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Inicio', 'Planificación', 'Ejecución', 'Seguimiento', 'Cierre'],
+                datasets: [{
+                    label: 'Distribución del Esfuerzo',
+                    data: [5, 20, 50, 15, 10],
+                    backgroundColor: ['#FF6B6B', '#FFD166', '#06D6A0', '#118AB2', '#073B4C'],
+                    borderColor: '#F8F9FA',
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            },
+            options: { ...commonChartOptions }
+        });
+
+        const rolesCtx = document.getElementById('rolesChart').getContext('2d');
+        const originalLabels = ['Jefe de Proyecto', 'Equipo del Proyecto', 'Patrocinador', 'Cliente / Usuario'];
+        const wrappedLabels = originalLabels.map(label => wrapLabel(label, 16));
+
+        new Chart(rolesCtx, {
+            type: 'bar',
+            data: {
+                labels: wrappedLabels,
+                datasets: [
+                    {
+                        label: 'Planificación',
+                        data: [10, 4, 6, 2],
+                        backgroundColor: '#FFD166',
+                    },
+                    {
+                        label: 'Ejecución del Trabajo',
+                        data: [3, 10, 1, 1],
+                        backgroundColor: '#06D6A0',
+                    },
+                    {
+                        label: 'Toma de Decisiones',
+                        data: [8, 2, 9, 5],
+                        backgroundColor: '#FF6B6B',
+                    }
+                ]
+            },
+            options: {
+                ...commonChartOptions,
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: {
+                            font: {
+                                family: 'Inter'
+                            }
+                        }
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                family: 'Inter'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    ...commonChartOptions.plugins,
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
