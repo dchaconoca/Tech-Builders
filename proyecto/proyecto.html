@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: ¿Qué es un Proyecto?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Usando Plus Jakarta Sans (recomendada como alternativa) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <style>
+        :root {
+            --color-title: #990099;
+            --color-subtitle: #3c1e99;
+            --color-text: #747474;
+            --color-icon: #000000;
+            --color-background: #ffffff;
+        }
+
+        /* Apply the primary font to the body */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-background);
+            background-image: linear-gradient(to right,rgba(240, 240, 240, 0.7), rgba(255, 255, 255, 0.8));
+        }
+        /* Custom styles for colors */
+        .text-title { color: var(--color-title); }
+        .text-subtitle { color: var(--color-subtitle); }
+        .text-body { color: var(--color-text); }
+        .icon-color { color: var(--color-icon); }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            color: #118AB2;
+            font-size: 2.5rem;
+            line-height: 1;
+            text-align: center;
+            transform: rotate(90deg);
+        }
+        @media (min-width: 1024px) {
+            .flow-arrow {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body class="text-[#073B4C]">
+
+    <!-- 
+    Palette Name: Energetic & Playful
+    #FF6B6B (Red)
+    #FFD166 (Yellow)
+    #06D6A0 (Green)
+    #118AB2 (Blue)
+    #073B4C (Dark Blue/Text)
+
+    Narrative Plan:
+    1. Hook: Define "Proyecto" in a visually striking way.
+    2. Main Body 1: Visualize the 5 project stages as a clear, connected flow, supported by a chart showing effort distribution.
+    3. Main Body 2: Introduce the key team roles using a card-based layout, supported by a chart comparing responsibilities.
+    4. Conclusion: A simple, memorable takeaway.
+
+    Visualization Choices:
+    - Project Definition: Goal: Inform. Chosen Viz: Large, styled text (HTML/CSS). Justification: Direct and impactful. NO SVG.
+    - 5 Stages: Goal: Organize. Chosen Viz: Flowchart (HTML/CSS with Tailwind). Justification: Intuitive for processes. NO SVG/MERMAID.
+    - Effort Distribution: Goal: Compare. Chosen Viz: Donut Chart (Chart.js/Canvas). Justification: Excellent for showing parts of a whole. NO SVG.
+    - Team Roles: Goal: Organize. Chosen Viz: Grid of Cards (HTML/CSS). Justification: Clear, segmented information. NO SVG.
+    - Role Responsibilities: Goal: Compare. Chosen Viz: Bar Chart (Chart.js/Canvas). Justification: Ideal for comparing distinct categories. NO SVG.
+
+    Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output.
+    -->
+    <header>
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo Placeholder -->
+            <a href="#inicio">
+                <img src="../images/logo.png" alt="Diana Emprende" class="h-20 w-auto md:h-22">
+            </a>
+        </div>
+    </header>
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12 md:mb-20">
+            <h1 class="text-4xl md:text-6xl font-black text-title mb-4">¿Qué es un Proyecto?</h1>
+            <p class="text-xl md:text-2xl font-bold">¡Piénsalo como una <span class="text-title">Misión</span>! 🚀</p>
+            <p class="max-w-3xl mx-auto mt-4 text-lg">Un proyecto es un esfuerzo <span class="font-bold">temporal</span> para crear algo <span class="font-bold">único</span>. Tiene un principio y un fin claros, con un objetivo que alcanzar a través de una serie de pasos planificados.</p>
+        </header>
+
+        <section id="stages" class="mb-12 md:mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-subtitle mb-10">Las 5 Etapas de un Proyecto</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 items-stretch">
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-lg border-t-4 border-[#FF6B6B] flex flex-col">
+                            <div class="text-4xl mb-2">💡</div>
+                            <h3 class="font-bold text-lg">1. Inicio</h3>
+                            <p class="text-sm mt-1">Nace la idea y se define el objetivo principal.</p>
+                        </div>
+
+                        <div class="flex items-center justify-center lg:block">
+                            <div class="flow-arrow">→</div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-lg border-t-4 border-[#FFD166] flex flex-col">
+                            <div class="text-4xl mb-2">🗺️</div>
+                            <h3 class="font-bold text-lg">2. Planificación</h3>
+                            <p class="text-sm mt-1">Se crea el plan maestro: tareas, plazos y recursos.</p>
+                        </div>
+                        
+                        <div class="flex items-center justify-center lg:block">
+                            <div class="flow-arrow">→</div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-lg border-t-4 border-[#06D6A0] flex flex-col">
+                            <div class="text-4xl mb-2">⚙️</div>
+                            <h3 class="font-bold text-lg">3. Ejecución</h3>
+                            <p class="text-sm mt-1">¡Manos a la obra! El equipo realiza las tareas.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 mt-4 items-stretch">
+                        <div class="bg-white p-4 rounded-xl shadow-lg border-t-4 border-[#118AB2] flex flex-col lg:col-start-3">
+                            <div class="text-4xl mb-2">📊</div>
+                            <h3 class="font-bold text-lg">4. Seguimiento</h3>
+                            <p class="text-sm mt-1">Se vigila el progreso y se corrigen desviaciones.</p>
+                        </div>
+
+                        <div class="flex items-center justify-center lg:block">
+                            <div class="flow-arrow">→</div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-lg border-t-4 border-[#073B4C] flex flex-col">
+                            <div class="text-4xl mb-2">🏆</div>
+                            <h3 class="font-bold text-lg">5. Cierre</h3>
+                            <p class="text-sm mt-1">Se entrega el resultado y se aprende del proceso.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl text-center mb-4">Distribución del Esfuerzo</h3>
+                    <p class="text-center text-sm mb-4">La fase de ejecución suele consumir la mayor parte del tiempo y los recursos en un proyecto.</p>
+                    <div class="chart-container">
+                        <canvas id="effortChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roles" class="mb-12 md:mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-subtitle mb-10">Los Protagonistas del Proyecto</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-6 bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl text-center mb-4">Nivel de Responsabilidad por Rol</h3>
+                    <p class="text-center text-sm mb-4">Cada rol tiene un enfoque diferente. El Jefe de Proyecto planifica y organiza, mientras que el equipo ejecuta el trabajo.</p>
+                    <div class="chart-container">
+                        <canvas id="rolesChart"></canvas>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                        <div class="text-5xl mb-3">💰</div>
+                        <h3 class="font-bold text-xl">Patrocinador</h3>
+                        <p class="mt-2">Proporciona los recursos (dinero, permisos) y apoya el proyecto para que tenga éxito.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                        <div class="text-5xl mb-3">🧭</div>
+                        <h3 class="font-bold text-xl">Jefe de Proyecto</h3>
+                        <p class="mt-2">El capitán. Organiza, controla el presupuesto y resuelve problemas.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                        <div class="text-5xl mb-3">🧑‍🤝‍🧑</div>
+                        <h3 class="font-bold text-xl">Equipo</h3>
+                        <p class="mt-2">Los que hacen el trabajo. Usan sus habilidades para completar las tareas.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                        <div class="text-5xl mb-3">😊</div>
+                        <h3 class="font-bold text-xl">Cliente / Usuario</h3>
+                        <p class="mt-2">La persona para quien se hace el proyecto. Su satisfacción es la medida del éxito.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center border-t pt-8 mt-12">
+            <p class="text-lg text-title font-bold">Ahora ya sabes cómo funciona un proyecto.</p>
+	        <p class="text-lg text-title font-bold">¿Estás listo para empezar tu propia misión?</p>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Diana Chacón Ocariz.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const commonChartOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            size: 14,
+                            family: 'Inter'
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#073B4C',
+                    titleFont: {
+                        size: 16,
+                        weight: 'bold'
+                    },
+                    bodyFont: {
+                        size: 14
+                    },
+                    padding: 12,
+                    cornerRadius: 8
+                }
+            }
+        };
+
+        const effortCtx = document.getElementById('effortChart').getContext('2d');
+        new Chart(effortCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Inicio', 'Planificación', 'Ejecución', 'Seguimiento', 'Cierre'],
+                datasets: [{
+                    label: 'Distribución del Esfuerzo',
+                    data: [5, 20, 50, 15, 10],
+                    backgroundColor: ['#FF6B6B', '#FFD166', '#06D6A0', '#118AB2', '#073B4C'],
+                    borderColor: '#F8F9FA',
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            },
+            options: { ...commonChartOptions }
+        });
+
+        const rolesCtx = document.getElementById('rolesChart').getContext('2d');
+        const originalLabels = ['Jefe de Proyecto', 'Equipo del Proyecto', 'Patrocinador', 'Cliente / Usuario'];
+        const wrappedLabels = originalLabels.map(label => wrapLabel(label, 16));
+
+        new Chart(rolesCtx, {
+            type: 'bar',
+            data: {
+                labels: wrappedLabels,
+                datasets: [
+                    {
+                        label: 'Planificación',
+                        data: [10, 4, 6, 2],
+                        backgroundColor: '#FFD166',
+                    },
+                    {
+                        label: 'Ejecución del Trabajo',
+                        data: [3, 10, 1, 1],
+                        backgroundColor: '#06D6A0',
+                    },
+                    {
+                        label: 'Toma de Decisiones',
+                        data: [8, 2, 9, 5],
+                        backgroundColor: '#FF6B6B',
+                    }
+                ]
+            },
+            options: {
+                ...commonChartOptions,
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: {
+                            font: {
+                                family: 'Inter'
+                            }
+                        }
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                family: 'Inter'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    ...commonChartOptions.plugins,
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
