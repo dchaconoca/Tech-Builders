@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Google Drive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <style>
+        :root {
+            --color-title: #990099;
+            --color-subtitle: #3c1e99;
+            --color-text: #353535;
+            --color-icon: #000000;
+            --color-background: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-background);
+            background-image: linear-gradient(to right, rgba(240, 240, 240, 0.7), rgba(255, 255, 255, 0.8));
+            color: var(--color-text);
+        }
+
+        .text-title { color: var(--color-title); }
+        .text-subtitle { color: var(--color-subtitle); }
+        .text-body { color: var(--color-text); }
+        .icon-color { color: var(--color-icon); }
+
+        .flowchart-arrow {
+            position: relative;
+            width: 2px;
+            height: 30px;
+            background-color: #cccccc;
+            margin: 10px auto;
+        }
+
+        .flowchart-arrow::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid #cccccc;
+        }
+        
+        .border-l-subtitle {
+             border-left-color: var(--color-subtitle);
+        }
+    </style>
+</head>
+<body class="text-body">
+
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center md:text-left mb-12 md:mb-20">
+            <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="../index.html" class="flex-shrink-0"> <img src="../images/logo.png" alt="Diana Emprende" class="h-20 w-auto"> </a>
+                <div class="mt-6 md:mt-0">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-title tracking-tight">Google Drive: Tu Nube Personal</h1>
+                    <p class="text-lg md:text-xl text-body mt-4 max-w-3xl mx-auto md:mx-0">Domina el almacenamiento en la nube, organiza tus archivos y colabora sin límites.</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="que-es" class="text-center">
+                <h2 class="text-3xl font-bold mb-4 text-subtitle">¿Qué es Google Drive?</h2>
+                <p class="max-w-2xl mx-auto text-body mb-8">Piensa en Drive como un disco duro digital accesible desde cualquier lugar. No solo guarda tus archivos, sino que te da superpoderes para gestionarlos. Comienzas con una base generosa de almacenamiento gratuito.</p>
+                <div class="bg-white rounded-xl shadow-lg p-8 inline-block border border-gray-200">
+                    <div class="text-7xl font-black text-title">15 GB</div>
+                    <div class="text-xl font-bold text-subtitle mt-2">De Almacenamiento Gratuito</div>
+                    <p class="text-sm text-body mt-1">Con cada cuenta de Google.</p>
+                </div>
+            </section>
+
+            <section id="para-que-sirve">
+                 <h2 class="text-3xl font-bold text-center mb-8 text-subtitle">Tus Archivos, Siempre Contigo</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-3 icon-color">💾</div>
+                        <h3 class="font-bold text-lg text-subtitle">Guardar de Todo</h3>
+                        <p class="text-body text-sm mt-2">Libera espacio de tus dispositivos guardando fotos, videos y documentos de forma segura.</p>
+                    </div>
+                     <div class="bg-white rounded-xl shadow-md p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-3 icon-color">📱</div>
+                        <h3 class="font-bold text-lg text-subtitle">Acceso Total</h3>
+                        <p class="text-body text-sm mt-2">Entra a tus archivos desde tu ordenador, tablet o móvil. Solo necesitas internet.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-3 icon-color">📤</div>
+                        <h3 class="font-bold text-lg text-subtitle">Compartir Fácilmente</h3>
+                        <p class="text-body text-sm mt-2">Envía enlaces directos a archivos pesados en lugar de adjuntarlos en correos.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-3 icon-color">🛡️</div>
+                        <h3 class="font-bold text-lg text-subtitle">Cero Dramas</h3>
+                        <p class="text-body text-sm mt-2">Si tu equipo falla, tus archivos permanecen intactos y seguros en la nube de Google.</p>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="organizar">
+                <h2 class="text-3xl font-bold text-center mb-8 text-subtitle">Organiza tu Mundo Digital</h2>
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200">
+                    <p class="text-center text-body mb-8">El orden es clave. Drive te da herramientas sencillas para que encuentres todo a la primera. Sigue este flujo para tener todo bajo control.</p>
+                    <div class="flex flex-col md:flex-row justify-around items-center text-center gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-56 h-40 flex flex-col justify-center items-center rounded-lg shadow text-white" style="background: var(--color-subtitle);">
+                                <h4 class="font-bold mb-2">1. Sube o Crea</h4>
+                                <p class="text-sm">Arrastra archivos o crea Docs, Sheets, etc.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center my-4 md:my-0">
+                            <div class="w-56 h-40 flex flex-col justify-center items-center rounded-lg shadow text-white" style="background: var(--color-subtitle);">
+                                <h4 class="font-bold mb-2">2. Organiza en Carpetas</h4>
+                                <p class="text-sm">Agrupa por temas y ponles colores.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-56 h-40 flex flex-col justify-center items-center rounded-lg shadow text-white" style="background: var(--color-subtitle);">
+                                <h4 class="font-bold mb-2">3. Busca y Encuentra</h4>
+                                <p class="text-sm">Usa la potente barra de búsqueda.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="crear-vs-subir">
+                <h2 class="text-3xl font-bold text-center mb-8 text-subtitle">¿Qué puedes guardar en Drive?</h2>
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 text-body">
+                    <p class="text-center mb-6">En Drive tienes dos opciones: crear archivos nuevos con las herramientas de Google o subir archivos que ya tienes en tu computadora. ¡Las posibilidades son enormes!</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg mb-2 text-center text-subtitle">Crear en Drive</h3>
+                            <ul class="list-disc list-inside bg-gray-50 p-4 rounded-lg">
+                                <li>Documentos (Google Docs)</li>
+                                <li>Hojas de cálculo (Google Sheets)</li>
+                                <li>Presentaciones (Google Slides)</li>
+                                <li>Formularios (Google Forms)</li>
+                                <li>Y más...</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2 text-center text-subtitle">Subir a Drive</h3>
+                            <ul class="list-disc list-inside bg-gray-50 p-4 rounded-lg">
+                                <li>Documentos (PDF, .docx, .txt)</li>
+                                <li>Imágenes (JPG, PNG, GIF)</li>
+                                <li>Audio (MP3, WAV)</li>
+                                <li>Video (MP4, MOV, AVI)</li>
+                                <li>Archivos comprimidos (ZIP, RAR)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="colaborar">
+                <h2 class="text-3xl font-bold text-center mb-8 text-subtitle">Colabora como un Profesional</h2>
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 max-w-2xl mx-auto">
+                    <h3 class="font-bold text-xl text-center mb-4 text-subtitle">Permisos de Colaboración</h3>
+                    <p class="text-center text-body mb-6">Al compartir, tú decides el nivel de poder que le das a los demás. Cada nivel tiene un propósito específico para el trabajo en equipo.</p>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4 border-l-subtitle">
+                            <h4 class="font-bold text-title">Editor</h4>
+                            <p class="text-sm text-body">Puede hacer cambios, aceptar sugerencias y compartir el archivo con otros.</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4 border-l-subtitle">
+                            <h4 class="font-bold text-title">Comentador</h4>
+                            <p class="text-sm text-body">Puede ver y añadir comentarios, pero no puede editar el contenido directamente.</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4 border-l-subtitle">
+                            <h4 class="font-bold text-title">Lector</h4>
+                            <p class="text-sm text-body">Solo puede ver el archivo. No puede hacer cambios ni comentarios.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center py-12 mt-8">
+            <p class="text-title font-bold">¡Desbloque un nuevo superpoder organizando y compartiendo tus archivos en la Nube!</p>
+            <div class="border-t mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Diana Chacón Ocariz.</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
