@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,28 +45,51 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(200, 200, 200, 0.5);
         }
+
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-subtitle);
+            border-bottom-color: var(--color-subtitle);
+        }
     </style>
 </head>
 <body class="text-body">
 
-    <div class="container mx-auto p-4 sm:p-8">
-
-        <header class="text-center md:text-left mb-12 md:mb-20">
-            <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-6">
-            <!-- Logo Placeholder -->
-                <a href="../index.html">
-                    <img src="../images/logo.png" alt="Diana Emprende" class="h-20 w-auto md:h-22">
-                </a>
-                <div class="mt-6 md:mt-0">
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-title drop-shadow-sm">🖥️ ¡Tu PC al Descubierto!</h1>
-                    <p class="text-lg md:text-xl text-body mt-4 max-w-3xl mx-auto">Si ya dominas tu celular, estás a un paso de ser un experto en computadoras. ¡Descubre cómo funcionan!</p>
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="../images/logo.png" alt="Diana Emprende">
+                    </a>
+                    <div class="ml-4">
+                        <h1 class="text-xl font-bold text-title">¡Tu PC al Descubierto!</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#intro" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Introducción</a>
+                        <a href="#como-funciona" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Componentes</a>
+                        <a href="#hardware-software" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Hardware/Software</a>
+                        <a href="#seguridad" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Seguridad</a>
+                    </div>
                 </div>
             </div>
-        </header>
+        </nav>
+    </header>
+
+    <div class="container mx-auto p-4 sm:p-8">
 
         <main class="space-y-16">
 
-            <section id="como-funciona">
+            <section id="intro" class="text-center py-12 md:py-16 scroll-mt-20">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-title drop-shadow-sm">🖥️ ¡Tu PC al Descubierto!</h1>
+                <p class="text-lg md:text-xl text-body mt-4 max-w-3xl mx-auto">Si ya dominas tu celular, estás a un paso de ser un experto en computadoras. ¡Descubre cómo funcionan!</p>
+            </section>
+
+            <section id="como-funciona" class="scroll-mt-20">
                 <h2 class="text-3xl font-bold text-center mb-8 text-subtitle">¿Cómo funciona? Piensa en tu Celular</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     
@@ -96,7 +119,7 @@
                 </div>
             </section>
 
-            <section id="hardware-software">
+            <section id="hardware-software" class="scroll-mt-20">
                 <h2 class="text-3xl font-bold text-center mb-8 text-subtitle">Hardware vs. Software: El Cuerpo y el Alma</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div class="card rounded-xl shadow-lg p-6">
@@ -121,7 +144,7 @@
                 </div>
             </section>
 
-            <section id="seguridad">
+            <section id="seguridad" class="scroll-mt-20">
                 <h2 class="text-3xl font-bold text-center mb-8 text-subtitle">¡Navega Seguro como un Pro!</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
@@ -157,52 +180,74 @@
     </div>
 
     <script>
-        const ctx = document.getElementById('hardwareSoftwareChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Hardware (El Cuerpo)', 'Software (El Alma)'],
-                datasets: [{
-                    label: 'Componentes de una PC',
-                    data: [50, 50],
-                    backgroundColor: [
-                        '#3c1e99', // --color-subtitle
-                        '#990099'  // --color-title
-                    ],
-                    borderColor: getComputedStyle(document.documentElement).getPropertyValue('--color-background').trim(),
-                    borderWidth: 5,
-                    hoverOffset: 15
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim(),
-                            font: {
-                                size: 14,
-                                family: "'Plus Jakarta Sans', sans-serif"
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('hardwareSoftwareChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Hardware (El Cuerpo)', 'Software (El Alma)'],
+                    datasets: [{
+                        label: 'Componentes de una PC',
+                        data: [50, 50],
+                        backgroundColor: [
+                            '#3c1e99', // --color-subtitle
+                            '#990099'  // --color-title
+                        ],
+                        borderColor: getComputedStyle(document.documentElement).getPropertyValue('--color-background').trim(),
+                        borderWidth: 5,
+                        hoverOffset: 15
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim(),
+                                font: {
+                                    size: 14,
+                                    family: "'Plus Jakarta Sans', sans-serif"
+                                }
                             }
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            title: function(tooltipItems) {
-                                const item = tooltipItems[0];
-                                let label = item.chart.data.labels[item.dataIndex];
-                                if (Array.isArray(label)) {
-                                  return label.join(' ');
-                                } else {
-                                  return label;
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
+            });
+
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 80) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
         });
     </script>
 

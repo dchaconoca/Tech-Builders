@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,25 +38,51 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.18);
         }
+
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-subtitle);
+            border-bottom-color: var(--color-subtitle);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="container mx-auto p-6 md:p-10 max-w-5xl">
-
-        <header class="text-center md:text-left mb-12 md:mb-20">
-            <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-6">
-                <a href="../index.html" class="flex-shrink-0"> <img src="../images/logo.png" alt="Diana Emprende" class="h-20 w-auto"> </a>
-                <div class="mt-6 md:mt-0">
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-title tracking-tight">El Mundo de los Archivos</h1>
-                    <p class="text-lg md:text-xl text-body mt-4 max-w-3xl mx-auto md:mx-0">Un archivo 📁 es un conjunto de datos (como texto, imágenes o música) que está guardado en tu computadora (o tu teléfono).</p>
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="../images/logo.png" alt="Diana Emprende">
+                    </a>
+                    <div class="ml-4">
+                        <h1 class="text-xl font-bold text-title">El Mundo de los Archivos</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#intro" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Introducción</a>
+                        <a href="#anatomia" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Anatomía</a>
+                        <a href="#tipos" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Tipos</a>
+                        <a href="#organizacion" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Organización</a>
+                    </div>
                 </div>
             </div>
-        </header>
+        </nav>
+    </header>
+
+    <div class="container mx-auto p-6 md:p-10 max-w-5xl">
 
         <div class="space-y-12">
             
-            <section class="card text-center">
+            <section id="intro" class="text-center py-12 md:py-16 scroll-mt-20">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-title tracking-tight">El Mundo de los Archivos</h1>
+                <p class="text-lg md:text-xl text-body mt-4 max-w-3xl mx-auto">Un archivo 📁 es un conjunto de datos (como texto, imágenes o música) que está guardado en tu computadora (o tu teléfono).</p>
+            </section>
+
+            <section id="anatomia" class="card text-center scroll-mt-20">
                 <h2 class="text-3xl font-bold text-subtitle mb-4">Anatomía de un Archivo 🧩</h2>
                 <p class="text-body max-w-2xl mx-auto mb-6">Cada archivo tiene dos partes clave: un <span class="font-bold">nombre</span> para que lo identifiques y una <span class="font-bold">extensión</span> que le dice a la computadora qué tipo de archivo es. ¡Como un nombre y un apellido!</p>
                 <div class="bg-gray-100 p-4 rounded-xl flex flex-col items-center justify-center w-full max-w-md mx-auto">
@@ -68,7 +94,7 @@
                 </div>
             </section>
 
-            <section>
+            <section id="tipos" class="scroll-mt-20">
                 <h2 class="text-3xl font-bold text-subtitle text-center mb-8">Tipos de Archivos Más Comunes</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-white/80 p-6 rounded-2xl shadow-lg flex items-center space-x-6">
@@ -118,7 +144,7 @@
                 </div>
             </section>
             
-            <section class="card">
+            <section id="acciones" class="card scroll-mt-20">
                  <h2 class="text-3xl font-bold text-subtitle text-center mb-6">¿Qué Puedes Hacer con Ellos? ✨</h2>
                  <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
                     <div class="bg-gray-100 p-4 rounded-lg"><p class="font-bold text-body">Crear</p></div>
@@ -130,7 +156,7 @@
                  </div>
             </section>
 
-            <section class="card text-center">
+            <section id="organizacion" class="card text-center scroll-mt-20">
                 <h2 class="text-3xl font-bold text-subtitle mb-4">¡A Organizar se ha Dicho! 🗂️</h2>
                 <p class="text-body max-w-2xl mx-auto">No guardes todo en el escritorio. Usa <span class="font-bold">carpetas</span> para clasificar tu información. Es como tener gavetas para tus cosas: una para medias, otra para camisetas. ¡Así encuentras todo más fácil y mantienes el orden!</p>
             </section>
@@ -145,6 +171,30 @@
         </footer>
 
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 80) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

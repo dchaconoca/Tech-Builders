@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva de Google Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <!-- Chosen Palette: Custom User Palette -->
+    <!-- Application Structure Plan: A single-page, vertical scrolling application with a sticky top navigation. The structure is thematic, guiding the user from basic concepts ('Qué es') to practical application ('Chuleta de Comandos'). This non-linear but guided structure allows both beginners and experienced users to find information efficiently. Key interactions include tabbed content for functionalities and a filterable table for commands to make a large amount of information digestible and accessible. -->
+    <!-- Visualization & Content Choices: 'Qué es/Cómo funciona': Goal: Inform. Method: HTML/CSS cards with icons. Interaction: Hover effects. Justification: Visually separates concepts. 'Funcionalidades': Goal: Organize/Inform. Method: Tabbed interface. Interaction: Click to reveal content. Justification: Prevents information overload. 'De la Idea al Documento': Goal: Explain Process. Method: HTML/CSS timeline. Interaction: Hover effects. Justification: Clarifies a multi-step process. 'Chuleta': Goal: Organize/Compare. Method: Filterable HTML table (Windows only). Interaction: Click to filter. Justification: Provides rapid access to specific information. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        :root {
+            --color-title: #990099;
+            --color-subtitle: #3c1e99;
+            --color-text: #353535;
+            --color-icon: #000000;
+            --color-background: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-background);
+            background-image: linear-gradient(to right, rgba(240, 240, 240, 0.7), rgba(255, 255, 255, 0.8));
+            color: var(--color-text);
+        }
+
+        .text-title { color: var(--color-title); }
+        .text-subtitle { color: var(--color-subtitle); }
+        .text-body { color: var(--color-text); }
+        .icon-color { color: var(--color-icon); }
+
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-subtitle);
+            border-bottom-color: var(--color-subtitle);
+        }
+        .feature-tab.active {
+            background-color: var(--color-subtitle);
+            color: white;
+        }
+        .command-filter.active {
+            background-color: var(--color-subtitle);
+            color: white;
+            border-color: var(--color-subtitle);
+        }
+    </style>
+</head>
+<body class="text-body">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="../images/logo.png" alt="Diana Emprende">
+                    </a>
+                    <div class="ml-4">
+                        <h1 class="text-xl font-bold text-title">Guía de Google Docs</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#descubre" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Descubre</a>
+                        <a href="#funcionalidades" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Funcionalidades</a>
+                        <a href="#proceso" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Proceso</a>
+                        <a href="#chuleta" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Chuleta</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <section id="descubre" class="mb-24 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center text-title mb-4">🌍 Descubre el Universo de Google Docs</h2>
+            <p class="text-center max-w-3xl mx-auto text-body mb-12">Google Docs es más que un simple procesador de texto. Es una herramienta colaborativa y poderosa que vive en la nube, permitiéndote crear, editar y compartir documentos desde cualquier lugar.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-subtitle mb-3">💡 ¿Qué es?</h3>
+                    <p class="text-body">Imagina un cuaderno digital mágico que no se instala en tu PC, sino que vive en tu cuenta de Google. Es un procesador de textos en línea, accesible y siempre actualizado.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-subtitle mb-3">🎯 ¿Para qué sirve?</h3>
+                    <p class="text-body">Desde trabajos escolares y guiones, hasta actas de reunión y novelas. Su súper poder es el trabajo en equipo: varias personas pueden escribir y editar en el mismo documento ¡a la vez!</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-subtitle mb-3">⚙️ ¿Cómo funciona?</h3>
+                    <p class="text-body mb-4">La magia está en la nube. Cada cambio se guarda y sincroniza automáticamente en los servidores de Google, eliminando el botón "Guardar" para siempre.</p>
+                    <div class="flex items-center justify-center space-x-2 text-sm">
+                        <span class="p-2 bg-slate-100 rounded-md">Tu PC</span>
+                        <span class="font-bold text-subtitle">&lt;--&gt;</span>
+                        <span class="p-2 bg-purple-100 rounded-md text-subtitle">☁️ La Nube</span>
+                        <span class="font-bold text-subtitle">&lt;--&gt;</span>
+                        <span class="p-2 bg-slate-100 rounded-md">Otro PC</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="funcionalidades" class="mb-24 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center text-title mb-4">🛠️ Funcionalidades Clave</h2>
+            <p class="text-center max-w-3xl mx-auto text-body mb-12">Google Docs es mucho más que una página en blanco. Explora estas pestañas para descubrir las herramientas que lo convierten en una potente plataforma de creación y colaboración.</p>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <button class="feature-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 bg-white shadow-sm" data-target="colaboracion">🤝 Colaboración</button>
+                    <button class="feature-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 bg-white shadow-sm" data-target="formato">🎨 Formato Inteligente</button>
+                    <button class="feature-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 bg-white shadow-sm" data-target="ia">✨ Herramientas IA</button>
+                    <button class="feature-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 bg-white shadow-sm" data-target="integracion">🧩 Integración</button>
+                </div>
+                <div id="feature-content" class="bg-white p-8 rounded-xl shadow-lg min-h-[250px]">
+                </div>
+            </div>
+        </section>
+        
+        <section id="proceso" class="mb-24 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center text-title mb-4">🚀 De la Idea al Documento Final</h2>
+            <p class="text-center max-w-3xl mx-auto text-body mb-12">Crear un documento es un proceso sencillo y fluido. Sigue estos pasos para transformar tus ideas en un trabajo pulido y listo para compartir.</p>
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-purple-200 -translate-y-1/2"></div>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
+                    <div class="flex-1 text-center relative px-4">
+                        <div class="mx-auto w-16 h-16 rounded-full bg-subtitle text-white flex items-center justify-center text-2xl font-bold mb-3 border-4 border-white shadow-lg icon-color" style="background-color: var(--color-subtitle);">1</div>
+                        <h3 class="font-bold text-subtitle">Crear o Abrir</h3>
+                        <p class="text-sm text-body">Ve a docs.google.com y haz clic en "En blanco" o elige una plantilla.</p>
+                    </div>
+                    <div class="flex-1 text-center relative px-4">
+                        <div class="mx-auto w-16 h-16 rounded-full bg-subtitle text-white flex items-center justify-center text-2xl font-bold mb-3 border-4 border-white shadow-lg icon-color" style="background-color: var(--color-subtitle);">2</div>
+                        <h3 class="font-bold text-subtitle">Escribir y Dar Formato</h3>
+                        <p class="text-sm text-body">Usa la barra de herramientas para aplicar estilos, insertar imágenes y más.</p>
+                    </div>
+                    <div class="flex-1 text-center relative px-4">
+                        <div class="mx-auto w-16 h-16 rounded-full bg-subtitle text-white flex items-center justify-center text-2xl font-bold mb-3 border-4 border-white shadow-lg icon-color" style="background-color: var(--color-subtitle);">3</div>
+                        <h3 class="font-bold text-subtitle">Colaborar</h3>
+                        <p class="text-sm text-body">Usa el botón "Compartir" para invitar a otros a editar o comentar.</p>
+                    </div>
+                    <div class="flex-1 text-center relative px-4">
+                        <div class="mx-auto w-16 h-16 rounded-full bg-subtitle text-white flex items-center justify-center text-2xl font-bold mb-3 border-4 border-white shadow-lg icon-color" style="background-color: var(--color-subtitle);">4</div>
+                        <h3 class="font-bold text-subtitle">Descargar o Compartir</h3>
+                        <p class="text-sm text-body">Descarga como PDF, Word, o comparte un enlace para verlo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chuleta" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center text-title mb-4">⌨️ Tu Chuleta de Comandos</h2>
+            <p class="text-center max-w-3xl mx-auto text-body mb-8">Acelera tu trabajo con estos atajos de teclado. Usa los filtros para encontrar rápidamente el comando que necesitas. ¡Pruébalo!</p>
+            
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button class="command-filter px-4 py-2 border rounded-full text-sm font-medium transition-colors duration-300" data-filter="todos">Todos</button>
+                <button class="command-filter px-4 py-2 border rounded-full text-sm font-medium transition-colors duration-300" data-filter="formato">Formato</button>
+                <button class="command-filter px-4 py-2 border rounded-full text-sm font-medium transition-colors duration-300" data-filter="navegacion">Navegación</button>
+                <button class="command-filter px-4 py-2 border rounded-full text-sm font-medium transition-colors duration-300" data-filter="comentarios">Comentarios</button>
+                <button class="command-filter px-4 py-2 border rounded-full text-sm font-medium transition-colors duration-300" data-filter="edicion">Edición</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left">
+                        <thead class="text-xs uppercase bg-slate-100">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-subtitle">Acción</th>
+                                <th scope="col" class="px-6 py-3 text-subtitle">Windows / ChromeOS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="commands-tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 text-sm">
+        <p class="text-body">Guía interactiva creada para explorar el poder de Google Docs.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const featuresData = {
+                colaboracion: {
+                    title: '🤝 Colaboración en Tiempo Real',
+                    description: 'Invita a otros a tu documento con un simple enlace. Ve sus cursores y cambios al instante. Usa los comentarios y sugerencias para trabajar en equipo sin sobreescribir el trabajo de los demás. ¡Es como estar en la misma habitación, pero en línea!'
+                },
+                formato: {
+                    title: '🎨 Formato Inteligente y Profesional',
+                    description: 'Más allá de negritas y cursivas. Usa estilos de título para crear un índice automático. Inserta tablas, imágenes, dibujos y gráficos. Las plantillas te dan un punto de partida profesional para currículums, informes y más.'
+                },
+                ia: {
+                    title: '✨ Herramientas Asistidas por IA',
+                    description: 'Google Docs te ayuda a escribir mejor y más rápido. Obtén sugerencias gramaticales y de estilo mientras escribes. Usa la función "Redacción inteligente" para autocompletar frases comunes y el dictado por voz para transcribir tus ideas sin teclear.'
+                },
+                integracion: {
+                    title: '🧩 Integración con el Ecosistema Google',
+                    description: 'Docs se conecta perfectamente con otras herramientas de Google. Inserta gráficos desde Google Sheets que se actualizan automáticamente. Responde a comentarios directamente desde Gmail. Busca en la web y en tu Google Drive sin salir del documento.'
+                }
+            };
+
+            const commandsData = [
+                { action: 'Negrita', win: 'Ctrl + B', category: 'formato' },
+                { action: 'Cursiva', win: 'Ctrl + I', category: 'formato' },
+                { action: 'Subrayado', win: 'Ctrl + U', category: 'formato' },
+                { action: 'Copiar formato', win: 'Ctrl + Alt + C', category: 'formato' },
+                { action: 'Pegar formato', win: 'Ctrl + Alt + V', category: 'formato' },
+                { action: 'Aumentar sangría', win: 'Ctrl + ]', category: 'formato' },
+                { action: 'Disminuir sangría', win: 'Ctrl + [', category: 'formato' },
+                { action: 'Buscar y reemplazar', win: 'Ctrl + H', category: 'navegacion' },
+                { action: 'Insertar enlace', win: 'Ctrl + K', category: 'edicion' },
+                { action: 'Insertar comentario', win: 'Ctrl + Alt + M', category: 'comentarios' },
+                { action: 'Abrir historial de comentarios', win: 'Ctrl + Alt + Shift + A', category: 'comentarios' },
+                { action: 'Ir al siguiente comentario', win: 'Ctrl + Alt + N, C', category: 'comentarios' },
+                { action: 'Deshacer', win: 'Ctrl + Z', category: 'edicion' },
+                { action: 'Rehacer', win: 'Ctrl + Y', category: 'edicion' },
+                { action: 'Contar palabras', win: 'Ctrl + Shift + C', category: 'edicion' },
+                { action: 'Dictado por voz', win: 'Ctrl + Shift + S', category: 'edicion' },
+                { action: 'Ir a la parte superior del documento', win: 'Ctrl + Alt + Shift + P, H', category: 'navegacion' },
+                { action: 'Ir a la parte inferior del documento', win: 'Ctrl + Alt + Shift + P, E', category: 'navegacion' },
+            ];
+
+            const featureTabs = document.querySelectorAll('.feature-tab');
+            const featureContent = document.getElementById('feature-content');
+            
+            function updateFeatureContent(target) {
+                const data = featuresData[target];
+                featureContent.innerHTML = `
+                    <h3 class="text-xl font-bold text-subtitle mb-3">${data.title}</h3>
+                    <p class="text-body">${data.description}</p>
+                `;
+            }
+
+            featureTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    featureTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    updateFeatureContent(tab.dataset.target);
+                });
+            });
+
+            featureTabs[0].click();
+
+            const commandsTbody = document.getElementById('commands-tbody');
+            const commandFilters = document.querySelectorAll('.command-filter');
+
+            function populateCommands(filter = 'todos') {
+                commandsTbody.innerHTML = '';
+                const filteredData = filter === 'todos' ? commandsData : commandsData.filter(c => c.category === filter);
+                
+                filteredData.forEach(cmd => {
+                    const row = document.createElement('tr');
+                    row.className = 'bg-white border-b hover:bg-slate-50 transition-colors duration-200';
+                    row.innerHTML = `
+                        <td class="px-6 py-4 font-medium text-body whitespace-nowrap">${cmd.action}</td>
+                        <td class="px-6 py-4 font-mono text-sm text-body">${cmd.win}</td>
+                    `;
+                    commandsTbody.appendChild(row);
+                });
+            }
+
+            commandFilters.forEach(filterBtn => {
+                filterBtn.addEventListener('click', () => {
+                    commandFilters.forEach(f => f.classList.remove('active'));
+                    filterBtn.classList.add('active');
+                    populateCommands(filterBtn.dataset.filter);
+                });
+            });
+
+            commandFilters[0].click();
+
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 80) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

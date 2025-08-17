@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,6 +61,14 @@
                 transform: rotate(0deg);
             }
         }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-subtitle);
+            border-bottom-color: var(--color-subtitle);
+            }
+        }
     </style>
 </head>
 <body class="text-body">
@@ -88,24 +96,38 @@
 
     Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output.
     -->
-    <div class="container mx-auto p-4 md:p-8">
-
-        <header class="text-center md:text-left mb-12 md:mb-20">
-            <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-6">
-            <!-- Logo Placeholder -->
-                <a href="../index.html">
-                    <img src="../images/logo.png" alt="Diana Emprende" class="h-20 w-auto md:h-22">
-                </a>
-                <div class="mt-6 md:mt-0">
-                    <h1 class="text-4xl md:text-6xl font-black text-title mb-4">¿Qué es un Proyecto?</h1>
-                    <p class="text-xl md:text-2xl font-bold">¡Piénsalo como una <span class="text-title">Misión</span>! 🚀</p>
-                    <p class="max-w-3xl mx-auto mt-4 text-lg">Un proyecto es un esfuerzo <span class="font-bold">temporal</span> para crear algo <span class="font-bold">único</span>. Tiene un principio y un fin claros, con un objetivo que alcanzar a través de una serie de pasos planificados.</p>
-                    <a href="https://g.co/gemini/share/929e0bdac016" target="_blank" rel="noopener noreferrer" class="text-subtitle font-bold">Clic aquí y te lo cuento como si fuera un cuento 😉</a>
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="../images/logo.png" alt="Diana Emprende">
+                    </a>
+                    <div class="ml-4">
+                        <h1 class="text-xl font-bold text-title">¿Qué es un Proyecto?</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#intro" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Introducción</a>
+                        <a href="#stages" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Etapas</a>
+                        <a href="#roles" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Roles</a>
+                    </div>
                 </div>
             </div>
-        </header>
+        </nav>
+    </header>
 
-        <section id="stages" class="mb-12 md:mb-20">
+    <div class="container mx-auto p-4 md:p-8">
+
+        <section id="intro" class="text-center py-12 md:py-16 scroll-mt-20">
+            <h1 class="text-4xl md:text-6xl font-black text-title mb-4">¿Qué es un Proyecto?</h1>
+            <p class="text-xl md:text-2xl font-bold">¡Piénsalo como una <span class="text-title">Misión</span>! 🚀</p>
+            <p class="max-w-3xl mx-auto mt-4 text-lg">Un proyecto es un esfuerzo <span class="font-bold">temporal</span> para crear algo <span class="font-bold">único</span>. Tiene un principio y un fin claros, con un objetivo que alcanzar a través de una serie de pasos planificados.</p>
+            <a href="https://g.co/gemini/share/929e0bdac016" target="_blank" rel="noopener noreferrer" class="text-subtitle font-bold mt-4 inline-block">Clic aquí y te lo cuento como si fuera un cuento 😉</a>
+        </section>
+
+        <section id="stages" class="mb-12 md:mb-20 scroll-mt-20">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-subtitle mb-10">Las 5 Etapas de un Proyecto</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-center">
@@ -169,7 +191,7 @@
             </div>
         </section>
 
-        <section id="roles" class="mb-12 md:mb-20">
+        <section id="roles" class="mb-12 md:mb-20 scroll-mt-20">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-subtitle mb-10">Los Protagonistas del Proyecto</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-center">
                 <div class="lg:col-span-6 bg-white p-6 rounded-xl shadow-lg">

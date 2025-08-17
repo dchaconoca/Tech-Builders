@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- Usando Plus Jakarta Sans (recomendada como alternativa) -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -61,25 +64,44 @@
                 transform: rotate(0deg);
             }
         }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-subtitle);
+            border-bottom-color: var(--color-subtitle);
+        }
     </style>
 </head>
 <body class="text-body">
-    <div class="container mx-auto p-4 md:p-8">
-
-        <header class="text-center md:text-left mb-12 md:mb-20">
-            <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-6">
-            <!-- Logo Placeholder -->
-                <a href="#inicio">
-                    <img src="./images/logo.png" alt="Diana Emprende" class="h-20 w-auto md:h-22">
-                </a>
-                <div class="text-center mt-6 md:mt-0">
-                    <h1 class="text-4xl md:text-6xl font-black text-title mb-4">Tech Builders</h1>
-                    <p class="text-2xl md:text-4xl font-bold text-subtitle">Tu Laboratorio de Innovación</p>
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="./images/logo.png" alt="Diana Emprende">
+                    </a>
+                    <div class="ml-4">
+                        <h1 class="text-xl font-bold text-title">Tech Builders</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#inicio" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Manuales</a>
+                        <a href="#contacto" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Contacto</a>
+                    </div>
                 </div>
             </div>
-        </header>
+        </nav>
+    </header>
 
-        <main id="inicio">
+    <div class="container mx-auto p-4 md:p-8">
+        <section class="text-center py-12 md:py-16">
+            <h1 class="text-4xl md:text-6xl font-black text-title mb-4">Tech Builders</h1>
+            <p class="text-2xl md:text-4xl font-bold text-subtitle">Tu Laboratorio de Innovación</p>
+        </section>
+
+        <main id="inicio" class="scroll-mt-20">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-title text-center">Manuales de Supervivencia</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Artículo 1 -->
@@ -118,17 +140,65 @@
                         <span class="text-sm text-subtitle font-semibold">Leer más →</span>
                     </a>
                 </article>
+                <!-- Artículo 5 -->
+                <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow flex flex-col">
+                    <a href="./contenido/docs.html" class="block mb-4" target="_blank">
+                        <img src="./images/docs.jpeg" alt="Guía Interactiva de Google Docs" class="rounded-lg w-full h-40 object-cover mb-4">
+                        <h3 class="text-xl font-bold text-title mb-2">Guía de Google Docs</h3>
+                        <p class="text-body mb-2">Crea, edita y colabora en documentos desde cualquier lugar con esta guía interactiva.</p>
+                        <span class="text-sm text-subtitle font-semibold">Leer más →</span>
+                    </a>
+                </article>
             </div>
+            <h2 class="text-title font-bold text-center text-2xl p-6">Si no lo encuentras ¡pregunta! 😃</h2>
         </main>
 
 
-
-        <footer class="text-center border-t pt-8 mt-12">
-            <p class="text-title font-bold">Si no lo encuentras ¡pregunta! 😃</p>
-            <div class="border-t mt-8 pt-6 text-center text-gray-500 text-sm">
+    <!-- Footer -->
+    <footer id="contacto" class="bg-gray-300 text-title font-semibold">
+        
+        <div class="container mx-auto px-2 py-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- Info -->
+                <div class="md:col-span-1">
+                    <h4 class="text-lg font-bold">Diana Chacón Ocariz</h4>
+                    <p class="text-sm">Transformando mentes, desarrollando negocios.</p>
+                    <p class="text-sm">Estrategia, Datos e IA.</p>
+                </div>
+                <!-- Contact -->
+                <div>
+                     <h4 class="text-lg font-bold">Contacto</h4>
+                     <div class="mt-2 space-y-2">
+                        <a href="mailto:diana@plastilina-la.com" class="flex items-center justify-center md:justify-start gap-2 hover:text-gray-500 transition-transform duration-300 hover:scale-110">
+                            <i class="fas fa-envelope"></i>
+                            <span>diana@plastilina-la.com</span>
+                        </a>
+                        <a href="https://wa.me/584127872515" target="_blank" class="flex items-center justify-center md:justify-start gap-2 hover:text-gray-500 transition-transform duration-300 hover:scale-110">
+                             <i class="fab fa-whatsapp"></i>
+                             <span>+58 412 787 2515</span>
+                        </a>
+                     </div>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h4 class="text-lg font-bold">Redes Sociales</h4>
+                    <div class="flex justify-center md:justify-start space-x-5 mt-3">
+                       <a href="https://instagram.com/Diana.Emprende.Contigo" target="_blank" class="hover:text-gray-500 transition-transform duration-300 hover:scale-110"
+                       onclick="trackEvent('click_cta', 'engagement', 'boton_instagram')">
+                           <i class="fab fa-instagram fa-2x"></i>
+                       </a>
+                        <a href="https://linkedin.com/in/DianaEmprende" target="_blank" class="hover:text-gray-500 transition-transform duration-300 hover:scale-110"
+                        onclick="trackEvent('click_cta', 'engagement', 'boton_linkedin')">
+                           <i class="fab fa-linkedin fa-2x"></i>
+                       </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-500 mt-8 pt-6 text-center text-gray-500 text-sm">
                 <p>&copy; 2025 Diana Chacón Ocariz.</p>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     </div>
 
