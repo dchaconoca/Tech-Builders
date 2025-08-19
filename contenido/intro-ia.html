@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA: Tu asistente inteligente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <style>
+        :root {
+            --color-title: #990099;
+            --color-subtitle: #3c1e99;
+            --color-text: #353535;
+            --color-icon: #000000;
+            --color-background: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-background);
+            background-image: linear-gradient(to right, rgba(240, 240, 240, 0.7), rgba(255, 255, 255, 0.8));
+        }
+
+        .text-title { color: var(--color-title); }
+        .text-subtitle { color: var(--color-subtitle); }
+        .text-body { color: var(--color-text); }
+        .icon-color { color: var(--color-icon); }
+
+        .flow-line {
+            height: 2px;
+            background-color: var(--color-subtitle);
+            width: 50px;
+        }
+        .flow-arrow {
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 12px solid var(--color-subtitle);
+        } 
+
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-subtitle);
+            border-bottom-color: var(--color-subtitle);
+        }
+    </style>
+</head>
+<body class="antialiased text-body">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="../images/logo.png" alt="Diana Emprende">
+                    </a>
+                    <div class="ml-4">
+                        <h1 class="text-xl font-bold text-title">IA: Tu Asistente Inteligente</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#que-es-ia" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">¿Qué es?</a>
+                        <a href="#ia-cotidiana" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">IA Cotidiana</a>
+                        <a href="#ia-generativa" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">IA Generativa</a>
+                        <a href="#revolucion" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Revolución</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <header class="text-center my-12 md:my-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-title">¿QUÉ ES LA INTELIGENCIA ARTIFICIAL?</h1>
+            <p class="text-lg md:text-xl mt-4 max-w-3xl mx-auto text-body">No es cosa de pelis 🚀. Es tu nuevo asistente personal, compañero de equipo y multiplicador de creatividad.</p>
+            <a href="https://g.co/gemini/share/d3b1aca8dd94" target="_blank" rel="noopener noreferrer" class="text-subtitle font-bold mt-4 inline-block">Clic aquí y te lo cuento como si fuera un cuento 😉</a>
+        </header>
+
+        <main class="space-y-12 md:space-y-20">
+
+            <section id="que-es-ia" class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border border-gray-200">
+                <div class="text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 text-subtitle">1. Tu Asistente Nivel DIOS 🤖</h2>
+                    <p class="leading-relaxed text-body max-w-3xl mx-auto">
+                        Piensa en la IA como un cerebro digital que aprende y razona. Ayuda a las máquinas a realizar tareas que antes eran exclusivamente humanas. Estas son sus capacidades fundamentales:
+                    </p>
+                </div>
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-bold text-lg text-title">Reconocer Patrones</h3>
+                        <p class="text-sm text-body mt-1">Como cuando tu móvil te reconoce la cara para desbloquearse.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-bold text-lg text-title">Tomar Decisiones</h3>
+                        <p class="text-sm text-body mt-1">Como cuando Google Maps encuentra la ruta más rápida evitando el tráfico.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-bold text-lg text-title">Aprender de Ti</h3>
+                        <p class="text-sm text-body mt-1">Como cuando Netflix o Spotify te recomiendan justo lo que te gusta.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-bold text-lg text-title">Resolver Problemas</h3>
+                        <p class="text-sm text-body mt-1">Como cuando un programa traduce un texto a otro idioma al instante.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="ia-cotidiana" class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border border-gray-200">
+                <div class="text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 text-subtitle">2. La Usas Todos los Días (¡Y no te das cuenta!) 📱</h2>
+                    <p class="leading-relaxed max-w-3xl mx-auto mb-8 text-body">
+                        La IA ya es tu compañera de equipo invisible en muchas de las herramientas que usas a diario, optimizando y personalizando tu experiencia digital.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                     <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-bold text-lg text-title">Música y Películas</h3>
+                        <p class="text-sm text-body mt-1">Recibes recomendaciones personalizadas en servicios como Netflix y Spotify.</p>
+                    </div>
+                     <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-bold text-lg text-title">Mapas y Email</h3>
+                        <p class="text-sm text-body mt-1">Calcula rutas en tiempo real y filtra el correo no deseado de tu bandeja de entrada.</p>
+                    </div>
+                     <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-bold text-lg text-title">Fotos y Filtros</h3>
+                        <p class="text-sm text-body mt-1">Mejora tus fotos automáticamente y te sugiere los mejores filtros en redes sociales.</p>
+                    </div>
+                     <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-bold text-lg text-title">Banca y Seguridad</h3>
+                        <p class="text-sm text-body mt-1">Detecta posibles fraudes en tu tarjeta de crédito para protegerte.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ia-generativa" class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border border-gray-200">
+                 <div class="text-center mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-subtitle">3. IA Generativa: ¡Tu Cerebro con Superpoderes! ✨</h2>
+                    <p class="leading-relaxed max-w-3xl mx-auto text-body">
+                        Si la IA tradicional analiza, la IA Generativa ¡CREA! Es una revolución porque genera contenido totalmente nuevo. Es como tener un artista, un escritor y un programador listos para ayudarte.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-gray-50 p-6 rounded-lg border">
+                        <p class="text-5xl mb-3 icon-color">✍️</p>
+                        <h3 class="font-bold text-lg text-title">Crea Texto</h3>
+                        <p class="text-sm text-body">Desde un poema hasta código para una app.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border">
+                        <p class="text-5xl mb-3 icon-color">🎨</p>
+                        <h3 class="font-bold text-lg text-title">Genera Imágenes</h3>
+                        <p class="text-sm text-body">Pide un "astronauta en un dinosaurio" y ¡listo!</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg sm:col-span-2 md:col-span-1 border">
+                        <p class="text-5xl mb-3 icon-color">🎵</p>
+                        <h3 class="font-bold text-lg text-title">Compone Música</h3>
+                        <p class="text-sm text-body">La banda sonora para tu próximo video o proyecto.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="revolucion" class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border border-gray-200">
+                <div class="text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 text-subtitle">4. ¿Por Qué es una Revolución Total? 💥</h2>
+                    <p class="leading-relaxed max-w-3xl mx-auto mb-12 text-body">
+                        El cambio es fundamental: antes necesitabas ser un experto en tecnología. Ahora, el poder está en tus palabras. La IA Generativa democratiza el acceso a herramientas potentes.
+                    </p>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-center">
+                    <div class="bg-gray-50 p-6 rounded-lg border w-full md:w-1/3">
+                        <h3 class="font-bold text-xl mb-2 text-title">ANTES</h3>
+                        <p class="text-6xl mb-2 icon-color">👨‍💻</p>
+                        <p class="text-body">Necesitabas saber de programación y comandos complejos.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flow-line hidden md:block"></div>
+                        <div class="flow-arrow hidden md:block"></div>
+                    </div>
+                    <div class="bg-purple-100 p-6 rounded-lg border border-purple-300 w-full md:w-1/3 shadow-md">
+                        <h3 class="font-bold text-xl mb-2 text-title">AHORA</h3>
+                        <p class="text-6xl mb-2 icon-color">🗣️</p>
+                        <p class="text-body">Solo necesitas hablar en tu lenguaje natural.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                     <h3 class="text-2xl font-bold mb-6 text-title">Tú + IA = Equipo Imbatible</h3>
+                     <div class="flex justify-center items-center gap-4 text-5xl icon-color">
+                        <div class="p-4 bg-gray-100 rounded-full">👩‍🦱</div>
+                        <div class="text-subtitle font-bold text-4xl">+</div>
+                        <div class="p-4 bg-gray-100 rounded-full">🤖</div>
+                     </div>
+                     <p class="mt-4 max-w-2xl mx-auto text-body">La IA se encarga de lo aburrido para que tú te concentres en lo más pro: ¡crear y pensar en grande!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-16 py-8 border-t border-gray-300">
+            <p class="text-title font-bold">¡Tu viaje hacia el futuro comienza ahora!</p>
+            <p class="text-title font-bold">La curiosidad y la experimentación son tus mejores aliados. ¡Sigue aprendiendo!</p>
+            <div class="border-t mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Diana Chacón Ocariz.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // No charts needed for this version.
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 80) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
