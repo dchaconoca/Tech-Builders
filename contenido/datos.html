@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Poder de los Datos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --color-title: #990099;
+            --color-subtitle: #3c1e99;
+            --color-text: #353535;
+            --color-icon: #474747;
+            --color-background: #ffffff;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-background);
+            background-image: linear-gradient(to right, rgba(240, 240, 240, 0.7), rgba(255, 255, 255, 0.8));
+        }
+        .text-title { color: var(--color-title); }
+        .text-subtitle { color: var(--color-subtitle); }
+        .text-body { color: var(--color-text); }
+        .icon-color { color: var(--color-icon); }
+        .infographic-card {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .infographic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-subtitle);
+            border-bottom-color: var(--color-subtitle);
+        }
+    </style>
+</head>
+<body class="text-body">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="../images/logo.png" alt="Diana Emprende">
+                    </a>
+                    <div class="ml-4">
+                        <h1 class="text-xl font-bold text-title">El Poder de los Datos</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#que-son" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">¿Qué son?</a>
+                        <a href="#importancia" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">¿Por qué importan?</a>
+                        <a href="#tipos" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Tipos</a>
+                        <a href="#corazon" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Corazón</a>
+                        <a href="#graficos" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Gráficos</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="max-w-4xl mx-auto p-4 sm:p-8">
+
+        <!-- Main Title -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-title">¡Desbloquea el Poder de los Datos! 🚀</h1>
+        </header>
+
+        <!-- Grid for Infographic Sections -->
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1: ¿Qué son los Datos? -->
+            <section id="que-son" class="infographic-card p-6 flex flex-col items-center text-center">
+                <i class="fas fa-puzzle-piece fa-3x icon-color mb-4"></i>
+                <h2 class="text-2xl font-bold text-subtitle mb-3">1. ¿Qué son los Datos?</h2>
+                <p class="text-body">Son información sobre cualquier cosa: tu canción favorita, las notas de un examen o los <em>likes</em> de una foto.</p>
+                <p class="text-body mt-2">Piénsalos como piezas de LEGO: por sí solas no dicen mucho, pero juntas cuentan una historia.</p>
+            </section>
+
+            <!-- Card 2: ¿Por qué importan? -->
+            <section id="importancia" class="infographic-card p-6 flex flex-col items-center text-center">
+                <i class="fas fa-bolt fa-3x icon-color mb-4"></i>
+                <h2 class="text-2xl font-bold text-subtitle mb-3">2. ¿Por qué importan?</h2>
+                <p class="text-body">¡Porque te dan superpoderes! 🦸‍♀️ Con datos puedes tomar mejores decisiones, entender el mundo y hasta predecir qué pasará.</p>
+            </section>
+
+            <!-- Card 3: Tipos de Datos -->
+            <section id="tipos" class="infographic-card p-6 flex flex-col items-center text-center">
+                <div class="flex gap-6">
+                    <i class="fas fa-calculator fa-3x icon-color mb-4"></i>
+                    <i class="fas fa-palette fa-3x icon-color mb-4"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-subtitle mb-3">3. Tipos de Datos</h2>
+                <ul class="text-left list-disc pl-5 text-body">
+                    <li><strong>Cuantitativos (Números):</strong> Todo lo que se puede contar.</li>
+                    <li><strong>Cualitativos (Cualidades):</strong> Lo que no se cuenta con números.</li>
+                </ul>
+            </section>
+
+            <!-- Card 4: El Corazón de los Datos -->
+            <section id="corazon" class="infographic-card p-6 md:col-span-2 lg:col-span-1">
+                 <div class="text-center">
+                    <i class="fas fa-bullseye fa-3x icon-color mb-4"></i>
+                    <h2 class="text-2xl font-bold text-subtitle mb-3">4. El Corazón de los Datos</h2>
+                </div>
+                <p class="text-body text-center mb-4">Son 3 formas de encontrar el "centro" en un montón de datos:</p>
+                <ul class="space-y-2 text-body">
+                    <li><strong>Media (Promedio):</strong> La nota promedio de tus exámenes. Se calcula sumando todo y dividiendo.</li>
+                    <li><strong>Mediana:</strong> Si ordenas a tus amigos por altura, el que queda justo en el medio.</li>
+                    <li><strong>Moda:</strong> La canción que más se repite en tu playlist. ¡La que está de moda!</li>
+                </ul>
+            </section>
+
+            <!-- Card 5: ¡Haz que los Datos Hablen! -->
+            <section id="graficos" class="infographic-card p-6 md:col-span-2">
+                <div class="text-center">
+                    <div class="flex gap-6 justify-center">
+                       <i class="fas fa-chart-bar fa-3x icon-color mb-4"></i>
+                       <i class="fas fa-chart-pie fa-3x icon-color mb-4"></i>
+                       <i class="fas fa-chart-line fa-3x icon-color mb-4"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-subtitle mb-3">5. ¡Haz que los Datos Hablen! (Gráficos)</h2>
+                </div>
+                <ul class="space-y-6 text-body">
+                    <li>
+                        <strong><i class="fas fa-chart-bar icon-color mr-2"></i>Gráfico de Barras:</strong> Ideal para comparar. ¿Quién tiene más goles, Messi o Cristiano?
+                        <div class="mt-2 flex justify-center">
+                            <img src="../images/barras.png" alt="Ejemplo gráfico de barras" class="rounded-lg shadow w-78 h-52 object-contain bg-gray-100">
+                        </div>
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-chart-pie icon-color mr-2"></i>Gráfico Circular (Pastel):</strong> Muestra porcentajes. ¿Qué parte de tu día dedicas a dormir, estudiar o jugar?
+                        <div class="mt-2 flex justify-center">
+                            <img src="../images/pastel.png" alt="Ejemplo gráfico circular" class="rounded-lg shadow w-68 h-40 object-contain bg-gray-100">
+                        </div>
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-chart-line icon-color mr-2"></i>Gráfico de Líneas:</strong> Perfecto para ver cambios en el tiempo. ¡Cómo han crecido tus seguidores este año!
+                        <div class="mt-2 flex justify-center">
+                            <img src="../images/lineas.png" alt="Ejemplo gráfico de líneas" class="rounded-lg shadow w-78 h-62 object-contain bg-gray-100">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer class="text-center border-t pt-8 mt-12">
+            <p class="text-lg text-title font-bold">¡Ahora puedes ver el mundo con ojos de datos!</p>
+            <div class="border-t mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Diana Chacón Ocariz.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
