@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hojas de Cálculo: ¡Tu Súper Poder en Datos!</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <style>
+        /* Estilos personalizados proporcionados por el usuario */
+        :root {
+            --color-title: #990099;
+            --color-subtitle: #3c1e99;
+            --color-text: #353535;
+            --color-icon: #474747;
+            --color-background: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-background);
+            background-image: linear-gradient(to right, rgba(240, 240, 240, 0.7), rgba(255, 255, 255, 0.8));
+        }
+
+        .text-title { color: var(--color-title); }
+        .text-subtitle { color: var(--color-subtitle); }
+        .text-body { color: var(--color-text); }
+        .icon-color { color: var(--color-icon); }
+
+        /* Estilos adicionales para mejorar la apariencia */
+        .infographic-card {
+            background-color: var(--color-background);
+            border-radius: 1.5rem; /* Bordes más redondeados */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .infographic-card:hover {
+            transform: translateY(-5px);
+        }
+        code {
+            background-color: #f0e6f0;
+            color: var(--color-title);
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.3rem;
+            font-weight: bold;
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-subtitle);
+            border-bottom-color: var(--color-subtitle);
+        }
+    </style>
+</head>
+<body class="text-body">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0">
+                        <img class="h-10 w-auto" src="../images/logo.png" alt="Diana Emprende">
+                    </a>
+                    <div class="ml-4">
+                        <h1 class="text-xl font-bold text-title">Hojas de Cálculo</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#que-son" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">¿Qué son?</a>
+                        <a href="#celda" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">La Celda</a>
+                        <a href="#usos" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Usos</a>
+                        <a href="#funciones" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">Funciones</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenedor principal de la infografía -->
+    <main class="infographic-card w-full max-w-4xl p-8 sm:p-10 lg:p-12 mx-auto my-10">
+
+        <!-- Título principal -->
+        <h1 class="text-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-10">
+            Hojas de Cálculo: ¡Tu Súper Poder Digital! 🚀
+        </h1>
+
+        <!-- Sección: ¿Qué son? -->
+        <section id="que-son" class="mb-8 scroll-mt-20">
+            <h2 class="text-subtitle text-2xl font-bold mb-4 flex items-center gap-3">
+                <i class="fas fa-bolt fa-fw icon-color"></i>
+                <span>¿Qué son?</span>
+            </h2>
+            <p class="text-body text-lg">
+                Imagina un cuaderno digital con poderes mágicos. Es una cuadrícula infinita de celdas donde puedes anotar información, hacer que la computadora haga cálculos por ti al instante y crear gráficos espectaculares. ¡Es como tener una calculadora y un organizador en uno!
+            </p>
+        </section>
+
+        <!-- Sección: La Celda -->
+        <section id="celda" class="mb-8 scroll-mt-20">
+            <h2 class="text-subtitle text-2xl font-bold mb-4 flex items-center gap-3">
+                <i class="fas fa-border-all fa-fw icon-color"></i>
+                <span>La Celda: El Corazón de la Hoja</span>
+            </h2>
+            <p class="text-body text-lg mb-4">
+                Cada rectangulito en la cuadrícula es una <strong>celda</strong>. ¡Es el bloque de construcción básico de todo! Piensa en ella como un cajón súper inteligente.
+            </p>
+            <ul class="text-body text-lg list-disc list-inside space-y-3">
+                <li><strong class="font-semibold">¿Para qué sirve?</strong> Para guardar un dato a la vez: un número, una palabra, una fecha, ¡o incluso una fórmula!</li>
+                <li><strong class="font-semibold">¿Cómo la llamamos?</strong> Cada celda tiene su propio nombre único, que es la combinación de su columna (letra) y su fila (número). Por ejemplo, <code>A1</code> es la primera celda de todas.</li>
+                <li><strong class="font-semibold">¿Qué podemos hacer con ella?</strong> ¡De todo! Escribir datos, aplicarles formato (color, tamaño), y lo más pro: usar su nombre en fórmulas para hacer cálculos con lo que contiene.</li>
+            </ul>
+        </section>
+        
+        <!-- Sección: Usos Principales -->
+        <section id="usos" class="mb-8 scroll-mt-20">
+            <h2 class="text-subtitle text-2xl font-bold mb-4 flex items-center gap-3">
+                <i class="fas fa-cogs fa-fw icon-color"></i>
+                <span>Usos Principales en tu Mundo</span>
+            </h2>
+            <ul class="text-body text-lg list-disc list-inside space-y-3">
+                <li><strong class="font-semibold">Organizar TODO:</strong> Desde planificar un viaje con amigos hasta llevar un registro de los libros que has leído o los niveles que has pasado en un videojuego.</li>
+                <li><strong class="font-semibold">Hacer cálculos automáticos:</strong> Ideal para armar un presupuesto para comprarte unos zapatos nuevos, calcular tus notas o administrar el dinero de un equipo.</li>
+                <li><strong class="font-semibold">Ver la info en gráficos:</strong> Convierte aburridos números en gráficos de barras o tortas para entender todo mucho más fácil.</li>
+            </ul>
+        </section>
+
+        <!-- NUEVA SECCIÓN: Reactividad Mágica -->
+        <section class="mb-8">
+            <h2 class="text-subtitle text-2xl font-bold mb-4 flex items-center gap-3">
+                <i class="fas fa-magic-wand-sparkles fa-fw icon-color"></i>
+                <span>El Verdadero Superpoder: ¡Reacción en Cadena!</span>
+            </h2>
+            <p class="text-body text-lg">
+                ¡Esto es lo más increíble! Si usas una fórmula para sumar celdas y luego cambias el número en una de esas celdas, ¡el resultado se actualiza solo al instante! Es una cadena de dominós automática. No es una tabla estática, ¡es un sistema vivo que reacciona a tus cambios!
+            </p>
+        </section>
+
+        <!-- NUEVA SECCIÓN: Rangos -->
+        <section class="mb-8">
+            <h2 class="text-subtitle text-2xl font-bold mb-4 flex items-center gap-3">
+                <i class="fas fa-object-group fa-fw icon-color"></i>
+                <span>¿Y si quiero seleccionar varias celdas? (Rangos)</span>
+            </h2>
+            <p class="text-body text-lg">
+                Para usar funciones, necesitas decirle a la hoja qué grupo de celdas usar. A esto se le llama <strong>rango</strong>. Se escribe poniendo la celda donde empieza, dos puntos (<code>:</code>) y la celda donde termina. Por ejemplo, <code>A1:A10</code> significa "todas las celdas en la columna A, desde la fila 1 hasta la 10".
+            </p>
+        </section>
+
+        <!-- Sección: Comandos y Funciones (MODIFICADA) -->
+        <section id="funciones" class="mb-8 scroll-mt-20">
+            <h2 class="text-subtitle text-2xl font-bold mb-4 flex items-center gap-3">
+                <i class="fas fa-keyboard fa-fw icon-color"></i>
+                <span>Comandos y Funciones Clave (Google Sheets)</span>
+            </h2>
+            <p class="text-body text-lg mb-4">
+                <strong>La Regla de Oro:</strong> Para que la hoja de cálculo sepa que quieres hacer un cálculo y no solo escribir texto, ¡toda fórmula <strong>SIEMPRE</strong> debe empezar con el signo igual (<code>=</code>)!
+            </p>
+            <ul class="text-body text-lg list-disc list-inside space-y-3">
+                <li><code>=SUMA(A1:A10)</code>: Suma un montón de números en un segundo.</li>
+                <li><code>=PROMEDIO(B1:B5)</code>: Saca el promedio. ¡Perfecto para tus calificaciones!</li>
+                <li><code>=CONTAR.SI(C1:C20;"Aprobado")</code>: Cuenta cuántas veces aparece una palabra.</li>
+                <li><strong class="font-semibold">Filtros:</strong> Te permite ocultar la información que no necesitas ver en ese momento.</li>
+                <li><strong class="font-semibold">Formato Condicional:</strong> ¡Haz que las celdas cambien de color según su valor! Por ejemplo, poner en rojo las tareas pendientes.</li>
+            </ul>
+        </section>
+
+        <!-- NUEVA SECCIÓN: Hojas/Pestañas -->
+        <section>
+            <h2 class="text-subtitle text-2xl font-bold mb-4 flex items-center gap-3">
+                <i class="fas fa-book-open fa-fw icon-color"></i>
+                <span>Tu Cuaderno Digital (Hojas/Pestañas)</span>
+            </h2>
+            <p class="text-body text-lg">
+                Un archivo de hoja de cálculo no es solo una página. Puedes tener varias "hojas" o "pestañas" dentro del mismo archivo (las verás abajo a la izquierda). Esto es genial para organizarte, como tener los gastos de enero en una hoja, los de febrero en otra, y así sucesivamente, ¡todo en el mismo lugar!
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="text-center border-t pt-8 mt-12">
+        <p class="text-lg text-title font-bold">Ahora ya sabes cómo funcionan las Hojas de Cálculo.</p>
+        <p class="text-lg text-title font-bold">¿Estás listo para empezar a organizar tu mundo?</p>
+        <div class="border-t mt-8 pt-6 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Diana Chacón Ocariz.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
